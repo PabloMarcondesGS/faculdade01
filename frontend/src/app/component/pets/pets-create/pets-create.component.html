@@ -1,0 +1,34 @@
+<mat-card>
+    <mat-card-title>
+        Novo PET
+    </mat-card-title>
+    <form [formGroup]="formPet">
+        <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="Nome" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apelido" formControlName="Apelido" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Selecione a Raça"  formControlName="Raca">
+                <mat-option *ngFor="let raca of racas | async" [value]="raca.Nome">{{raca.Nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Selecione a Espécie" formControlName="Especie">
+                <mat-option *ngFor="let especie of especies | async" [value]="especie.Nome">{{especie.Nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Selecione o Dono(a)" formControlName="Dono">
+                <mat-option *ngFor="let dono of donos | async" [value]="dono.id">{{dono.Nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="createPet()" [disabled]="formPet.invalid" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

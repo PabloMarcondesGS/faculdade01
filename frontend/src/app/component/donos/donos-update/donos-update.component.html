@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>
+        Editar Dono
+    </mat-card-title>
+    <form  [formGroup]="formDono">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="dono.Nome" formControlName="Nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="dono.Email" formControlName="Email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="dono.Telefone" formControlName="Telefone">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary"  [disabled]="formDono.invalid" (click)="updateDono()">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

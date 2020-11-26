@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>
+        Confirma a exclusão do PET?
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="pet.Nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apelido" [value]="pet.Apelido" name="apelido" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Raça" [value]="pet.Raca" name="raca" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Espécie" [value]="pet.Especie" name="especie" disabled>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="deletePets()" color="warn">
+        Confirmar Exclusão
+    </button>
+    <button mat-raised-button (click)="cancel()" >
+        Cancelar
+    </button>
+</mat-card>

@@ -1,0 +1,87 @@
+
+<mat-card>
+    <mat-card-title>
+       Dados do dono(a)
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" name="nome" [value]="dono.Nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" [value]="dono.Email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [value]="dono.Telefone" name="telefone" disabled>
+        </mat-form-field>
+    </form>
+    <mat-card-title>
+        Pets deste cliente
+     </mat-card-title>
+     <div class="mat-elevation-z4">
+        <table mat-table [dataSource]="pets">
+            <!-- Id  -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Id</th>
+                <td mat-cell *matCellDef="let row">{{row.id}}</td>
+            </ng-container>
+    
+            <!-- Nome -->
+            <ng-container matColumnDef="Nome">
+                <th mat-header-cell *matHeaderCellDef>Nome</th>
+                <td mat-cell *matCellDef="let row">{{row.Nome}}</td>
+            </ng-container>
+    
+            <!-- Apelido -->
+            <ng-container matColumnDef="Apelido">
+                <th mat-header-cell *matHeaderCellDef>Apelido</th>
+                <td mat-cell *matCellDef="let row">{{row.Apelido}}</td>
+            </ng-container>
+    
+            <!-- Raca -->
+            <ng-container matColumnDef="Raca">
+                <th mat-header-cell *matHeaderCellDef>Raça</th>
+                <td mat-cell *matCellDef="let row">{{row.Raca}}</td>
+            </ng-container>
+    
+            <!-- Especie -->
+            <ng-container matColumnDef="Especie">
+                <th mat-header-cell *matHeaderCellDef>Especie</th>
+                <td mat-cell *matCellDef="let row">{{row.Especie}}</td>
+            </ng-container>
+    
+    
+            <!-- Ações -->
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Ações</th>
+    
+                <td mat-cell *matCellDef="let row">
+                    <a routerLink="/pets/details/{{row.id}}" title="Mais informações">
+                        <i class="material-icons">
+                            search
+                        </i>
+                    </a>
+    
+                    <a routerLink="/pets/update/{{row.id}}" title="Editar">
+                        <i class="material-icons edit">
+                            edit
+                        </i>
+                    </a>
+    
+                    <a routerLink="/pets/delete/{{row.id}}" title="Deletar">
+                        <i class="material-icons delete">
+                            delete
+                        </i>
+                    </a>
+                </td>
+            </ng-container>
+    
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    
+    </div>
+    <button mat-raised-button (click)="backList()">
+        Voltar
+    </button>
+</mat-card>

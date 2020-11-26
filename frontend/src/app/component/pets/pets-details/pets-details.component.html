@@ -1,0 +1,37 @@
+
+<mat-card>
+    <mat-card-title>
+       Dados do PET
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="pet.Nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apelido" [value]="pet.Apelido" name="apelido" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Raça" [value]="pet.Raca" name="raca" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Espécie" [value]="pet.Especie" name="especie" disabled>
+        </mat-form-field>
+    </form>
+    <mat-card-title>
+        Dados do dono(a)
+     </mat-card-title>
+     <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="dono.Nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" [value]="dono.Email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [value]="dono.Telefone" name="telefone" disabled>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="backList()" >
+        Voltar
+    </button>
+</mat-card>

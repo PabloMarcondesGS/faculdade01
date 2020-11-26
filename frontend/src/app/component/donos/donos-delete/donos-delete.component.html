@@ -1,0 +1,23 @@
+
+<mat-card>
+    <mat-card-title>
+       Deseja realmente DELETAR dono(a)?
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" name="nome" [value]="dono.Nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" [value]="dono.Email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [value]="dono.Telefone" name="telefone" disabled>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="warn" (click)="deleteDono()">
+        DELETAR
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

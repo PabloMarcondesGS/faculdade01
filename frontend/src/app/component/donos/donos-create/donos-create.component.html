@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>
+        Novo Dono(a)
+    </mat-card-title>
+    <form [formGroup]="formDono">
+        <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="Nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="Email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" formControlName="Telefone">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" [disabled]="formDono.invalid" (click)="createDono()">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
